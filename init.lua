@@ -160,7 +160,18 @@ require('lazy').setup({
   {
     'supermaven-inc/supermaven-nvim',
     config = function()
-      require('supermaven-nvim').setup {}
+      require('supermaven-nvim').setup {
+        keymaps = {
+          accept_suggestion = '<Tab>',
+          clear_suggestion = '<C-]>',
+        },
+        ignore_filetypes = { cpp = true },
+        color = {
+          --        suggestion_color = '#ffffff',
+          cterm = 244,
+        },
+      }
+      --require('supermaven-nvim').setup {}
     end,
   },
   -- Here is a more advanced example where we pass configuration
@@ -950,14 +961,3 @@ local templ_format = function()
     end,
   })
 end
-require('supermaven-nvim').setup {
-  keymaps = {
-    accept_suggestion = '<Tab>',
-    clear_suggestion = '<C-]>',
-  },
-  ignore_filetypes = { cpp = true },
-  color = {
-    --        suggestion_color = '#ffffff',
-    cterm = 244,
-  },
-}
