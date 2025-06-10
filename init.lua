@@ -121,7 +121,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
-
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.hl.on_yank()`
@@ -825,11 +824,11 @@ require('lazy').setup({
           'path',
           'snippets',
           'lazydev',
+
           --'supermaven',
-          'nvim_lsp',
-          'luasnip',
-          'path',
-          'otter',
+          --'nvim_lsp',
+          --'luasnip',
+          --       'otter',
         },
 
         providers = {
@@ -1041,7 +1040,7 @@ local lspconfig = require 'lspconfig'
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 
-local servers = { 'gopls', 'ccls', 'cmake', 'tsserver', 'templ' }
+local servers = { 'gopls', 'ccls', 'cmake', 'ts_ls', 'templ' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
