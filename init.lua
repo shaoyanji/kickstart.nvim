@@ -820,7 +820,18 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev', 'supermaven', 'nvim_lsp', 'luasnip', 'path', 'otter' },
+        default = {
+          'lsp',
+          'path',
+          'snippets',
+          'lazydev',
+          --'supermaven',
+          'nvim_lsp',
+          'luasnip',
+          'path',
+          'otter',
+        },
+
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
         },
